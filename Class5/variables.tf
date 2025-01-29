@@ -22,3 +22,12 @@ variable "subnet3_cidr" {
   type = string
   description = "Provide subnet3 cidr block"
 }
+
+variable "ip_on_launch" {
+  type = bool
+}
+
+variable "instance_type" {
+  type = string
+  description = "Provide Instance type"
+}
