@@ -8,33 +8,33 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "name" {
   vpc_id = aws_vpc.main.id
-  cidr_block = var.subnet1_cidr
-  map_public_ip_on_launch = var.ip_on_launch
+  cidr_block = var.subnet_cidr[0].cidr
+  map_public_ip_on_launch = true
   availability_zone = "${var.region}a"
 
   tags = {
-    Name = "subnet1"
+    Name = var.subnet_cidr[0].subnet_name
   }
 }
 
 resource "aws_subnet" "name2" {
   vpc_id = aws_vpc.main.id
-  cidr_block = var.subnet2_cidr
-  map_public_ip_on_launch = var.ip_on_launch
+  cidr_block = var.subnet_cidr[1].cidr
+  map_public_ip_on_launch = true
   availability_zone = "${var.region}b"
 
   tags = {
-    Name = "subnet2"
+    Name = var.subnet_cidr[1].subnet_name
   }
 }
 
 resource "aws_subnet" "name3" {
   vpc_id = aws_vpc.main.id
-  cidr_block = var.subnet3_cidr
-  map_public_ip_on_launch = var.ip_on_launch
+  cidr_block = var.subnet_cidr[2].cidr
+  map_public_ip_on_launch = true
   availability_zone = "${var.region}c"
 
   tags = {
-    Name = "subnet3"
+    Name = var.subnet_cidr[2].subnet_name
   }
 }

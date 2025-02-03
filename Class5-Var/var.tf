@@ -8,7 +8,9 @@ variable "vpc_cidr" {
   description = "Provide cidr block"
 }
 
-variable "subnet1_cidr" {
-  type = string
-  description = "Provide subnet1 cidr block"
+variable "subnet_cidr" {
+  type = list(object({
+    cidr = string
+    subnet_name = string
+  }))
 }
